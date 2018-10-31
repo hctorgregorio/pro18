@@ -94,7 +94,7 @@ public class Ejercicios {
 		//lista de personas
 		Persona[] lista = ejercicio.listaPersonas(10);
 		
-		//saldoCuenta
+		//Ejercicio 1
 		
 		float saldo = 15.92f;
 		float[] movimientos = {500f, -100.25f, -50.36f, -250.78f, 100.50f};
@@ -111,6 +111,21 @@ public class Ejercicios {
 		
 		//pruebaCadenas
 		ejercicio.pruebaCadenas();
+
+		
+		/*
+		 * ===========================================
+		 *           MATRICES
+		 * ===========================================
+		 * 
+		 * usar generador
+		 * float[][] matriz = ejercicio.generarMatriz(filas, columnas, inferior, superior);
+		 * 
+		 */
+		
+		//resumenVendedor
+		float[][] matriz = ejercicio.generarMatriz(3, 12, 1, 15);
+		float[] resumenVendedor = ejercicio.resumenVendedor(matriz);
 		
 		System.out.println("FIN DEL PROGRAMA");
 	}
@@ -329,8 +344,33 @@ public class Ejercicios {
 		for (int i = 0; i < n; i++) {
 			resultado += r.nextInt(superior - inferior) + inferior;
 		}
+		/*
+		 * conversiones de tipos y lo hace truncando 
+		 * ejemplo 7/2=3.5 devolvera a 3 por ser un entero
+		 *================================================
+		 * 
+		 * CASTING= conversion dinamica de tipos
+		 *
+		 *================================================
+		 */
 		return resultado / n; 
 	 }
+	
+	/*
+	 * 31/10/2018
+	 * matriz de venta
+	 * vendedor son filas; mes son columnas
+	 */
+	
+	public float[] resumenVendedor (float[][] ventas) {
+		float[] resultado = new float[ventas.length];
+		for (int i = 0; i < ventas.length; i++) {
+			for (int j = 0; j < ventas[i].length; j++) {
+				resultado[i] += ventas[i][j];
+			}
+		}
+		return resultado;
+	}
 
 	 
 	public static void pruebasAPI() {
@@ -351,9 +391,21 @@ public class Ejercicios {
 		/*
 		 * otra opcion es:
 		 * System.out.println("LAS PALMAS DE GRAN CANARIA".substring(14, 18))
-		 */
-		
-		
+		 */		
 	}
-
+	
+	/*
+	 * Generador de matrices
+	 */
+	
+	public float[][] generarMatriz (int filas, int columnas, int inferior, int superior){
+		Random r = new Random();
+		float[][] resultado = new float[filas][columnas];
+		for (int i = 0; i < resultado.length; i++) {
+			for (int j = 0; j < resultado[i].length; j++) {
+				resultado[i][j] = r.nextInt(superior - inferior) + inferior;
+			}
+		}		
+		return resultado;
+	} 
 }
