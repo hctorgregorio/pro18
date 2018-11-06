@@ -126,7 +126,15 @@ public class Ejercicios {
 		//resumenVendedor
 		float[][] matriz = ejercicio.generarMatriz(3, 12, 1, 15);
 		float[] resumenVendedor = ejercicio.resumenVendedor(matriz);
-		float[] resumenMensual = ejercicio.resumenMensual(matriz);
+		//float[] resumenMensual = ejercicio.resumenMensual(matriz);
+		
+		/*
+		 * ==========================================
+		 * 			EXCEPCIONES
+		 * ==========================================
+		 */
+		String[] cadenasNumericas = {"123" , "63A", "101", "XYZ"};
+		int[] cadenaConvertida = ejercicio.convierteCadenas(cadenasNumericas);
 		
 		System.out.println("FIN DEL PROGRAMA");
 	}
@@ -376,18 +384,45 @@ public class Ejercicios {
 	 * 31/10/2018
 	 * resumen mensual recorrer por columnas
 	 */
+	
+	/*
 	public float[] resumenMensual (float[][] ventas) {
 		String[] meses = {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre" };
-		int cont = 0;
 		float[] resultado = new float[ventas[0].length];
 		for (int i = 0; i < ventas.length; i++) {
 			for (int j = 0; j < ventas[i].length; j++) {
 				resultado[i] += ventas[j][i];
 			}
-			System.out.println("el resumen del mes: " + meses[cont] + " es: " + resultado[i]);
-			cont++;
+			System.out.println("el resumen del mes: " + meses[I] + " es: " + resultado[i]);
 		}
 		return resultado;
+	}*/
+	
+	
+	/*
+	 * NullPointer
+	 * NumberFormat => String x = "6x9"; int numero = Integer.parseInt(x); 
+	 * ArrayIndexOutOfBounds
+	 */
+	//dado un array de cadena llamado cadenasNumericas
+	//String cadenasNumericas = {"123" , "63A", "101"}
+	
+	public int[] convierteCadenas(String[] cadenasNumericas) {
+		int [] resultado = new int[cadenasNumericas.length];
+		for (int i = 0; i < resultado.length; i++) {
+			try {
+				resultado[i] = Integer.parseInt(cadenasNumericas[i]);
+			} 
+			catch (NumberFormatException e) {
+				//devuelve -1 si no es convertible
+				resultado[i] = -1;
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+			}
+			
+		}
+		return resultado;	
 	}
 	 
 	public static void pruebasAPI() {
