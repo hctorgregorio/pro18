@@ -123,10 +123,18 @@ public class Ejercicios {
 		 * 
 		 */
 		
+		float[][] matrizIrregular = {
+				{10.5f, 15.0f, 5.5f, 2.5f, 7.5f, 5.0f, 5.5f, 2.5f, 10.5f, 15.0f, 7.5f, 5.0f},//12
+				{5.5f, 2.5f, 7.5f, 5.0f, 5.5f, 2.5f, 10.5f, 15.0f, 7.5f, 5.0f},//10
+				{10.5f, 15.0f, 5.5f, 2.5f, 10.5f, 15.0f, 7.5f, 5.0f},//8
+				{5.0f, 5.5f, 2.5f, 2.5f, 7.5f, 5.0f, 5.5f, 2.5f, 10.5f, 15.0f, 7.5f}//11
+		};
+		
 		//resumenVendedor
 		float[][] matriz = ejercicio.generarMatriz(3, 12, 1, 15);
 		float[] resumenVendedor = ejercicio.resumenVendedor(matriz);
-		//float[] resumenMensual = ejercicio.resumenMensual(matriz);
+		float[] resumenMensual = ejercicio.resumenMensual(matriz);
+		float[] resumenMensualIrregular = ejercicio.resumenMensualIrregular(matrizIrregular);
 		
 		/*
 		 * ==========================================
@@ -135,6 +143,8 @@ public class Ejercicios {
 		 */
 		String[] cadenasNumericas = {"123" , "63A", "101", "XYZ"};
 		int[] cadenaConvertida = ejercicio.convierteCadenas(cadenasNumericas);
+		
+		//ejercicio.reloj();
 		
 		System.out.println("FIN DEL PROGRAMA");
 	}
@@ -385,27 +395,76 @@ public class Ejercicios {
 	 * resumen mensual recorrer por columnas
 	 */
 	
-	/*
+	
 	public float[] resumenMensual (float[][] ventas) {
 		String[] meses = {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre" };
 		float[] resultado = new float[ventas[0].length];
-		for (int i = 0; i < ventas.length; i++) {
-			for (int j = 0; j < ventas[i].length; j++) {
-				resultado[i] += ventas[j][i];
+		for (int j = 0; j < ventas[0].length; j++) {
+			for (int i = 0; i < ventas.length; i++) {
+				resultado[j] += ventas[i][j];
 			}
-			System.out.println("el resumen del mes: " + meses[I] + " es: " + resultado[i]);
+			System.out.println("el resumen del mes de " + meses[j] + " es: " + resultado[j]);
+		}
+		System.out.println();
+		return resultado;
+		
+		/*
+		 * =====================
+		 * mi posible solucion
+		 * =====================
+		 * 	for (int i = 0; i < resultado.length; i++) {
+				for (int j = 0; j < ventas.length; j++) {
+					resultado[i] += ventas[j][i];
+				}
+				System.out.println("el resumen del mes de " + meses[i] + " es: " + resultado[i]);
+			}
+			return resultado;
+		 */
+	}
+	public float[] resumenMensualIrregular (float[][] ventas) {
+		String[] meses = {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre" };
+		float[] resultado = new float[12];
+		for (int j = 0; j < ventas[0].length; j++) {
+			for (int i = 0; i < ventas.length; i++) {
+				try {
+					resultado[j] += ventas[i][j];
+				} catch (IndexOutOfBoundsException e) {
+					resultado[j] += 0;
+				}
+				
+			}
+			System.out.println("el resumen del mes de " + meses[j] + " es: " + resultado[j]);
 		}
 		return resultado;
-	}*/
+	}
 	
+	public boolean esPrimo(int numero) {
+		boolean resultado = true;
+
+		return resultado;
+	}
 	
+/*	public void reloj() {
+		for (int i = 0; i < 24; i++) {
+			for (int j = 0; j < 60; j++) {
+				for (int k = 0; k < 60; k++) {
+					try {
+						System.out.println(i + ":" + j + ":" + k);
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						System.out.println("Error");;
+					}
+				}
+			}
+		}
+	}	
+*/	
 	/*
 	 * NullPointer
 	 * NumberFormat => String x = "6x9"; int numero = Integer.parseInt(x); 
 	 * ArrayIndexOutOfBounds
 	 */
-	//dado un array de cadena llamado cadenasNumericas
-	//String cadenasNumericas = {"123" , "63A", "101"}
 	
 	public int[] convierteCadenas(String[] cadenasNumericas) {
 		int [] resultado = new int[cadenasNumericas.length];
