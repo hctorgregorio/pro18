@@ -117,7 +117,11 @@ public class Ejercicios {
 		
 		//ordenar array
 		int[] numerosDesordenados = {5, 3, 7, 9, 2, 1, 6, 4, 5};
-		int[] numerosOrdenados = ejercicio.ordenarArray(numerosDesordenados);
+		ejercicio.ordenarArray(numerosDesordenados);
+		
+		//ordenar cadena
+		String[] cadenaDesordenados = {"5", "3", "7", "9", "2", "1", "6", "4", "5"};
+		ejercicio.ordenarCadena(cadenaDesordenados);
 		/*
 		 * ===========================================
 		 *           MATRICES
@@ -500,20 +504,8 @@ public class Ejercicios {
 	
 	//ordenar array
 	
-	public int[] ordenarArray (int[] array) {
-		int[] resultado = array;
+	public void ordenarArray (int[] array) {
 		int x;
-		/*for (int i = 0; i < resultado.length; i++) {
-			for (int j = 0; j < resultado.length; j++) {
-				if (resultado[j] > resultado[i]) {
-					x = resultado[i];
-					resultado[i] = resultado [j];
-					resultado[j] = x;
-				}
-			}
-		}
-		return resultado;*/
-		
 		for (int i = 0; i < array.length; i++) {
 			for (int j = i + 1; j < array.length; j++) {
 				if (array[i] > array[j]) {
@@ -523,7 +515,23 @@ public class Ejercicios {
 				}
 			}
 		}
-		return array;
+	}
+	
+	//ordenar cadena
+	
+	public void ordenarCadena (String [] cadena) {
+		String x;
+		int comparacion;
+		for (int i = 0; i < cadena.length - 1; i++) {
+			for (int j = i + 1; j < cadena.length; j++) {
+				comparacion = cadena[i].compareTo(cadena[j]);
+				if (cadena[i].compareTo(cadena[j]) > 0) {
+					x = cadena[i];
+					cadena[i] = cadena[j];
+					cadena[j] = x;
+				}
+			}
+		}
 	}
 	 
 	public static void pruebasAPI() {
