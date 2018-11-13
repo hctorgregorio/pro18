@@ -112,7 +112,12 @@ public class Ejercicios {
 		//pruebaCadenas
 		ejercicio.pruebaCadenas();
 
+		//es primo
+		boolean primo = ejercicio.esPrimo(6);
 		
+		//ordenar array
+		int[] numerosDesordenados = {5, 3, 7, 9, 2, 1, 6, 4, 5};
+		int[] numerosOrdenados = ejercicio.ordenarArray(numerosDesordenados);
 		/*
 		 * ===========================================
 		 *           MATRICES
@@ -439,9 +444,18 @@ public class Ejercicios {
 	}
 	
 	public boolean esPrimo(int numero) {
-		boolean resultado = true;
-
-		return resultado;
+		if (numero == 1){
+			System.out.print("el numero es 1 o 0");
+			return true;
+		}
+		for (int i = 2; i < numero; i++) {
+			if (numero % i == 0) {
+				System.out.print("El numero no es primo");
+				return false;
+			}
+		}
+		System.out.print("el numero es primo");
+		return true;
 	}
 	
 /*	public void reloj() {
@@ -482,6 +496,34 @@ public class Ejercicios {
 			
 		}
 		return resultado;	
+	}
+	
+	//ordenar array
+	
+	public int[] ordenarArray (int[] array) {
+		int[] resultado = array;
+		int x;
+		/*for (int i = 0; i < resultado.length; i++) {
+			for (int j = 0; j < resultado.length; j++) {
+				if (resultado[j] > resultado[i]) {
+					x = resultado[i];
+					resultado[i] = resultado [j];
+					resultado[j] = x;
+				}
+			}
+		}
+		return resultado;*/
+		
+		for (int i = 0; i < array.length; i++) {
+			for (int j = i + 1; j < array.length; j++) {
+				if (array[i] > array[j]) {
+					x = array[i];
+					array[i] = array[j];
+					array[j] = x;
+				}
+			}
+		}
+		return array;
 	}
 	 
 	public static void pruebasAPI() {
