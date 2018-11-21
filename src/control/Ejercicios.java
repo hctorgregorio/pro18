@@ -155,6 +155,31 @@ public class Ejercicios {
 		
 		//ejercicio.reloj();
 		
+		
+		/*
+		 * ==========================================
+		 * 			REPASO
+		 * ==========================================
+		 */
+		
+		int[] listaNumeros = {1, 3, 5, 7, 0, 2, 4, 6, 8};
+		ejercicio.invertirLista(listaNumeros);
+		
+		int[] l1 = {1, 3, 5, 7};
+		int[] l2 = {0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
+		int[] mezcla = ejercicio.mezclarListasOrdenadas(l1, l2);
+		
+		String cadenaEjemplo = "el ejercicio esta bien hecho";
+		String cadenaInvertida = ejercicio.invertirCaracteres(cadenaEjemplo);
+		
+		int[][] matrizIrregular = {
+				{10, 15, 5, 2, 7},//5
+				{0, 11, 3, 8, 4, 1, 2},//7
+				{9, 5, 4, 7, 4},//5
+				{3, 1, 5, 8}//4
+		};
+		
+		
 		System.out.println("FIN DEL PROGRAMA");
 	}
 	
@@ -568,5 +593,100 @@ public class Ejercicios {
 			}
 		}		
 		return resultado;
-	} 
+	}
+	
+	/*
+	 * ======================================
+	 *            REPASO
+	 * ======================================
+	 * 
+	 * 1º INVERTIR ELEMENTOS DE UNA LISTA (ORDENAR DE MAYOR A MENOR O VICEVERSA)
+	 * 
+	 * 2º MEZCLAR DOS LISTAS, PREVIAMENTE ORDENADAS
+	 * 
+	 * 3º INVERTIR LOS CARACTERES DE UNA CADENA
+	 * 
+	 */
+	
+	// 1º 
+	
+	public void invertirLista (int[] lista) {
+		int aux;
+		for (int i = 0; i < lista.length / 2; i++) {
+			aux = lista[i];
+			lista[i] = lista[lista.length - 1 - i];
+			lista[lista.length - 1 - i] = aux;
+		}
+	}
+	
+	// 2º
+	
+	public int[] mezclarListasOrdenadas (int[] l1, int[] l2) {
+		int[] resultado = new int[l1.length + l2.length];
+		int cont = 0;
+		/*int cont = 0;
+		 for (int i = 0; i < l1.length; i++) {
+			try {
+				if (l1[i] <= l2[i]) {
+					resultado[cont] = l1[i];
+					resultado[cont + 1] = l2[i];
+				} else {
+					resultado[cont] = l2[i];
+					resultado[cont + 1] = l1[i];
+				}
+			} catch (ArrayIndexOutOfBoundsException e) {
+				System.out.println("las listas deben ser del mismo tamaño");
+				return resultado;
+			}
+		}
+*/
+		while (cont < l1.length - 1) {
+			while (cont < l2.length - 1) {
+				for (int k = 0; k < resultado.length; k++) {
+					try {
+						if (l1[cont] <= l2[cont]) {
+							resultado[k] = l1[cont];
+							resultado[k + 1] = l2[cont];
+							cont++;
+							k++;
+						} else {
+							resultado[k] = l2[cont];
+							resultado[k + 1] = l1[cont];
+							cont++;
+							k++;
+						}
+					} catch (ArrayIndexOutOfBoundsException e) {
+						if(l1.length > l2.length) {
+							resultado[k] = l1[cont];
+							cont++;
+						} else {
+							resultado[k] = l2[cont];
+							cont++;
+						}
+						continue;
+					}
+				}
+			}
+		}
+		return resultado;
+	}
+	
+	public String invertirCaracteres (String cadena) {
+		String resultado = new String();
+		System.out.println(cadena.length());
+		for (int i = cadena.length() - 1; i > 0; i--) {
+			//resultado += cadena.charAt(i);
+			resultado = resultado.concat(cadena.substring(i, i + 1));
+		}
+		return resultado;
+	}
+	
+	public void ordenaFilasMatriz (int[][] matriz) {
+		for (int i = 0; i < matriz.length; i++) {
+			this.ordenarArray(matriz[i]);
+		}
+	}
+	public int[] matrizToArrayOrdenado (int[][] matriz) {
+		return null;
+	}
 }
