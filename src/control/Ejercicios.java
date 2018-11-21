@@ -179,6 +179,8 @@ public class Ejercicios {
 				{3, 1, 5, 8}//4
 		};
 		
+		ejercicio.ordenaFilasMatriz(matrizIrregularEnteros);
+		
 		
 		System.out.println("FIN DEL PROGRAMA");
 	}
@@ -689,4 +691,6 @@ public class Ejercicios {
 	public int[] matrizToArrayOrdenado (int[][] matriz) {
 		return null;
 	}
+	
+	//https://es.scribd.com/doc/2096038/Ejemplo-Casos-de-Uso-Video-Club
 }
