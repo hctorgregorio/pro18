@@ -172,7 +172,7 @@ public class Ejercicios {
 		String cadenaEjemplo = "el ejercicio esta bien hecho";
 		String cadenaInvertida = ejercicio.invertirCaracteres(cadenaEjemplo);
 		
-		int[][] matrizIrregular = {
+		int[][] matrizIrregularEnteros = {
 				{10, 15, 5, 2, 7},//5
 				{0, 11, 3, 8, 4, 1, 2},//7
 				{9, 5, 4, 7, 4},//5
