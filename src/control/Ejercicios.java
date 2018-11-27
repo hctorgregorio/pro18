@@ -6,171 +6,337 @@ import modelo.Persona;
 public class Ejercicios {
 
 	public static void main(String[] args) {
+		/**
+		 * ================================================
+		 * Declaracion e incializacion de un objeto Persona
+		 * ================================================
+		 */
+		
+		/*
 		Persona juan;
 		juan = new Persona("1234","juan palomo", 20);
 		//Persona persona1 = new Persona();
 		int pasos = juan.caminar(20);
-		//Llamar al metodo listaIntervalosEntero
+		*/
+		
 		Ejercicios ejercicio = new Ejercicios();
+		
+		/**
+		 * ===============================
+		 * Llamada a listaIntervalosEntero
+		 * ===============================
+		 */
+		
+		/*
 		int x = 10;
 		int y = 30;
 		ejercicio.listaIntervaloEntero(x, y);
 		System.out.println();
-		
-		//si es static puedes hacerlo de la siguiente manera
-		Ejercicios.pruebasAPI();
-		/*
-		 * sin static en el metodo purebaAPI()
-		 * 
-		 * new Ejercicios().pruebaAPI();.
-		 * 
-		 * ó
-		 * 
-		 * Ejercicios ejer = new Ejercicios()
-		 * ejer.pruebaAPI();
 		*/
-		System.out.println("fin del programa " + pasos);
 		
-		//Ejercicio 10-10-2018
+		/**
+		 * ====================
+		 * Ejercicio 10-10-2018
+		 * ====================
+		 */
+		
+		/*
 		System.out.println("Convierte cadena en entero");
 		String cadena = "2756";
 		System.out.println(ejercicio.convierteCadenaAEntero(cadena));
+		*/
 		
-		//Ejercicio Fibonacci
+		/**
+		 * ===================
+		 * Ejercicio Fibonacci
+		 * ===================
+		 */
+		
+		/*
 		System.out.println("Dado un numero, imprimir tantos numeros de la Serie de Fibonacci ");
 		int contador = 10;
 		ejercicio.serieFibonacci(contador);
+		*/
 		
-		//factorial de un numero dado
+		/**
+		 * ===================
+		 * Ejercicio Factorial
+		 * ===================
+		 */
+		
+		/*
 		System.out.println("factorial de un numero");
 		int numFactorial = 7;
 		System.out.println(ejercicio.factorial(numFactorial));
+		*/
 		
-		/*
+		/**
 		 * =================
 		 * Clase.estatico
 		 * objeto.noestatico
 		 * =================
 		 */
 		
-		//numero menor con metodo static y no static
+		/*
+		 * ===================================
+		 * Numero menor, sobrecarga de metodos
+		 * ===================================
+		 
 		int num1 = 1, num2 = 1, num3 = 4, num4 = 2;
-		int menor = Ejercicios.numeroMenor(num1, num2, num3, num4);
+		
 		//static
 		System.out.println("Primer metodo menor");
 		System.out.println(ejercicio.numeroMenor(num1, num2, num3));
+		
 		//no static
 		System.out.println("segundo metodo menor 4 parametros");
+		int menor = Ejercicios.numeroMenor(num1, num2, num3, num4);
 		System.out.println(menor);
+		*/
 		
-		/*
+		/**
 		 * ==========================================================
 		 * 			  variable longitud de los arrays
 		 * ==========================================================
 		 */
+
+		//int longitudArray = 30;
 		
-		int longitudArray = 30;
+		/**
+		 * =================
+		 * generarAleatorios
+		 * =================
+		 */
 		
-		//array de numeros aleatorios
+		/*
 		System.out.println("array de numeros aleatorios");
 		int[] misAleatorios = new int[longitudArray];		
 		misAleatorios = ejercicio.generaAleatorios(longitudArray);
+		*/
 		
-		//numero aleatorios por consola
+		/**
+		 * ==================
+		 * imprimirAleatorios
+		 * ==================
+		 */
+		
+		/*
 		System.out.println("Imprimir numeros aleatorios por consola");
 		int numerosAleatorios = 30;
 		ejercicio.imprimirAleatorios(numerosAleatorios);
+		*/
 		
-		//numero aleatorios entre un inferior y superior
+		/**
+		 * ======================
+		 * generarListaAleatorios
+		 * ======================
+		 */
+		
+		/*
 		System.out.println("numeros aleatorios comprendidos en un rango dentro de un array");
 		int[] arrayAleatorios = new int[longitudArray];
 		int rangoInferior = 100;
 		int rangoSuperior = 500;
 		arrayAleatorios = ejercicio.generaListaAleatorios(longitudArray, rangoInferior, rangoSuperior);
+		*/
 		
-		//estadistica de numero de veces que sale un numero
+		/**
+		 * ===========================
+		 * generarEstadisticaAparicion
+		 * ===========================
+		 */
+		
+		/*
 		int[] estadistica = ejercicio.generaEstadisticaAparicion(1000, 5, 10);
+		*/
 		
-		//lista de personas
+		/**
+		 * =============
+		 * listaPersonas
+		 * =============
+		 */
+		
+		/*
 		Persona[] lista = ejercicio.listaPersonas(10);
+		*/
 		
-		//Ejercicio 1
+		/**
+		 * ==================
+		 * calcularSaldoFinal
+		 * ==================
+		 */
 		
+		/*
 		float saldo = 15.92f;
 		float[] movimientos = {500f, -100.25f, -50.36f, -250.78f, 100.50f};
 	
 		System.out.println("el saldo actual es: " + ejercicio.calcularSaldoFinal(saldo, movimientos));
+		*/
 		
-		//Ejercicio 2
+		/**
+		 * ==========
+		 * ejercicio2
+		 * ==========
+		 */
 		
+		/*
 		int rango = 5;
 		int inf = 10;
 		int sup = 20;
 		System.out.println("La media es: " + ejercicio.ejercicio2(rango, inf, sup));
+		*/
 		
-		
-		//pruebaCadenas
-		ejercicio.pruebaCadenas();
-
-		//es primo
-		boolean primo = ejercicio.esPrimo(6);
-		
-		//ordenar array
-		int[] numerosDesordenados = {5, 3, 7, 9, 2, 1, 6, 4, 5};
-		ejercicio.ordenarArray(numerosDesordenados);
-		
-		//ordenar cadena
-		String[] cadenaDesordenados = {"5", "3", "7", "9", "2", "1", "6", "4", "5"};
-		ejercicio.ordenarCadena(cadenaDesordenados);
-		/*
-		 * ===========================================
-		 *           MATRICES
-		 * ===========================================
-		 * 
-		 * usar generador
-		 * float[][] matriz = ejercicio.generarMatriz(filas, columnas, inferior, superior);
-		 * 
+		/**
+		 * =============
+		 * pruebaCadenas
+		 * =============
 		 */
 		
-		float[][] matrizIrregular = {
+		//ejercicio.pruebaCadenas();
+		
+		/**
+		 * =======
+		 * esPrimo
+		 * =======
+		 */
+		
+		//boolean primo = ejercicio.esPrimo(6);
+		
+		/**
+		 * ============
+		 * ordenarArray
+		 * ============
+		 */
+		
+		/*
+		int[] numerosDesordenados = {5, 3, 7, 9, 2, 1, 6, 4, 5};
+		ejercicio.ordenarArray(numerosDesordenados);
+		*/
+		
+		/**
+		 * =============
+		 * ordenarCadena
+		 * =============
+		 */
+		
+		/*
+		String[] cadenaDesordenados = {"5", "3", "7", "9", "2", "1", "6", "4", "5"};
+		ejercicio.ordenarCadena(cadenaDesordenados);
+		*/
+		
+		/**
+		 * ========================================
+		 * ************MATRICES********************
+		 * ========================================
+		 */
+		
+		/*
+		float[][] matrizIrregularFloat = {
 				{10.5f, 15.0f, 5.5f, 2.5f, 7.5f, 5.0f, 5.5f, 2.5f, 10.5f, 15.0f, 7.5f, 5.0f},//12
 				{5.5f, 2.5f, 7.5f, 5.0f, 5.5f, 2.5f, 10.5f, 15.0f, 7.5f, 5.0f},//10
 				{10.5f, 15.0f, 5.5f, 2.5f, 10.5f, 15.0f, 7.5f, 5.0f},//8
 				{5.0f, 5.5f, 2.5f, 2.5f, 7.5f, 5.0f, 5.5f, 2.5f, 10.5f, 15.0f, 7.5f}//11
 		};
 		
-		//resumenVendedor
-		float[][] matriz = ejercicio.generarMatriz(3, 12, 1, 15);
-		float[] resumenVendedor = ejercicio.resumenVendedor(matriz);
-		float[] resumenMensual = ejercicio.resumenMensual(matriz);
-		float[] resumenMensualIrregular = ejercicio.resumenMensualIrregular(matrizIrregular);
+		float[][] matrizRegularFloat = {
+				{10.5f, 15.0f, 5.5f, 2.5f, 7.5f, 5.0f},//12
+				{5.5f, 2.5f, 7.5f, 5.0f, 5.5f, 2.5f},//10
+				{10.5f, 15.0f, 5.5f, 2.5f, 10.5f, 15.0f},//8
+				{5.0f, 5.5f, 2.5f, 2.5f, 7.5f, 5.0f}//11
+		};
+		*/
+		
+		/**
+		 * ===============
+		 * resumenVendedor
+		 * ===============
+		 */
+		
+		//float[] resumenVendedor = ejercicio.resumenVendedor(matrizRegularFloat);
+		
+		/**
+		 * ==============
+		 * resumenMensual
+		 * ==============
+		 */
+		
+		//float[] resumenMensual = ejercicio.resumenMensual(matrizRegularFloat);
+		
+		/**
+		 * =======================
+		 * resumenMensualIrregular
+		 * =======================
+		 */
+		
+		//float[] resumenMensualIrregular = ejercicio.resumenMensualIrregular(matrizRegularFloat);
+		
+		/**
+		 * ===============================
+		 * *********EXCEPCIONES***********
+		 * ===============================
+		 */
+		
+		/**
+		 * ================
+		 * convierteCadenas
+		 * ================
+		 */
 		
 		/*
-		 * ==========================================
-		 * 			EXCEPCIONES
-		 * ==========================================
-		 */
 		String[] cadenasNumericas = {"123" , "63A", "101", "XYZ"};
 		int[] cadenaConvertida = ejercicio.convierteCadenas(cadenasNumericas);
+		*/
 		
 		//ejercicio.reloj();
 		
-		
-		/*
+		/**
 		 * ==========================================
-		 * 			REPASO
+		 * **************REPASO**********************
 		 * ==========================================
 		 */
 		
+		/**
+		 * =============
+		 * invertirLista
+		 * =============
+		 */
+		
+		/*
 		int[] listaNumeros = {1, 3, 5, 7, 0, 2, 4, 6, 8};
 		ejercicio.invertirLista(listaNumeros);
+		*/
 		
-		int[] l1 = {1, 3, 5, 7};
-		int[] l2 = {20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30};
+		/**
+		 * ======================
+		 * mezclarListasOrdenadas
+		 * ======================
+		 */
+		
+		//CASO 1 IZQ
+		/*
+		int[] lista1 = {0, 1, 3, 9};
+		int[] lista2 = {1, 2, 3, 4, 5, 6, 7};
+		*/
+		/*
+		int[] lista1 = {1, 2, 3, 4, 5, 6, 7};
+		int[] lista2 = {0, 1, 3, 9};
+		*/
+		/*
+		int[] l1 = {0, 1, 3, 9};
+		int[] l2 = {1, 2, 3, 4, 5, 6, 7};
 		int[] mezcla = ejercicio.mezclarListasOrdenadas(l1, l2);
+		*/
 		
+		/**
+		 * ==================
+		 * invertirCaracteres
+		 * ==================
+		 */
+		
+		/*
 		String cadenaEjemplo = "el ejercicio esta bien hecho";
 		String cadenaInvertida = ejercicio.invertirCaracteres(cadenaEjemplo);
+		*/
 		
 		int[][] matrizIrregularEnteros = {
 				{10, 15, 5, 2, 7},//5
@@ -178,11 +344,29 @@ public class Ejercicios {
 				{9, 5, 4, 7, 4},//5
 				{3, 1, 5, 8}//4
 		};
-		
+		for (int i = 0; i < matrizIrregularEnteros.length; i++) {
+			ejercicio.ordenarArray(matrizIrregularEnteros[i]);
+		}
 		int[] arrayDeMatrizOrdenado = ejercicio.matrizToArrayOrdenado(matrizIrregularEnteros);
 		
 		
 		System.out.println("FIN DEL PROGRAMA");
+	}
+	
+	/**
+	 * ====================
+	 * 		METODOS		  
+	 * ====================
+	 */
+	
+	public void listaIntervaloEntero (int primero, int ultimo) {
+		while(primero <= ultimo) {
+			System.out.print(primero++ + ", ");
+		}
+	}
+	
+	public Integer convierteCadenaAEntero(String cadena) {
+		return Integer.parseInt(cadena);
 	}
 	
 	/*
@@ -260,25 +444,6 @@ public class Ejercicios {
 			return z;
 		else 
 			return w;
-	}
-	
-	/*
-	 * Dado una cadena , devolver el valor en formato de numero
-	 * entero correspondiente, si es compatible
-	 */
-	
-	public Integer convierteCadenaAEntero(String cadena) {
-		return Integer.parseInt(cadena);
-	}
-	
-	/*
-	 * Mostrar por consola los numeros comprendidos entre dos enteros, a y b
-	 */
-	
-	public void listaIntervaloEntero (int primero, int ultimo) {
-		while(primero <= ultimo) {
-			System.out.print(primero++ + ", ");
-		}
 	}
 	
 	/*
@@ -361,25 +526,11 @@ public class Ejercicios {
 		return resultado;
 	}
 	
-	/*
-	 * Saber cuantos caracteres tiene una cadena
-	 */
-	
-	 public void pruebaCadenas() {
-		 String nombre = "LAS PALMAS DE GRAN CANARIA";
-		 String cadena1 = "abca";
-		 String cadena2 = "a1cabbbdsbbb";
-		 System.out.println(cadena1.compareTo(cadena2));
-		 for (int i = 0; i < nombre.length(); i++) {
-			System.out.println(nombre.charAt(i));
-		}
-	 }
-	 
 	 /*
 	  *Ejercicio 1
 	  *Dado un saldo inicial y una lista de movimientos, se pide obtener el saldo final.
 	  */
-	 
+	
 	 public float calcularSaldoFinal (float saldoInicial, float[] movimientos) {
 		float resultado = saldoInicial;
 		for (int i = 0; i < movimientos.length; i++) {
@@ -410,6 +561,63 @@ public class Ejercicios {
 		 */
 		return resultado / n; 
 	 }
+	
+	/*
+	 * Saber cuantos caracteres tiene una cadena
+	 */
+	
+	 public void pruebaCadenas() {
+		 String nombre = "LAS PALMAS DE GRAN CANARIA";
+		 String cadena1 = "abca";
+		 String cadena2 = "a1cabbbdsbbb";
+		 System.out.println(cadena1.compareTo(cadena2));
+		 for (int i = 0; i < nombre.length(); i++) {
+			System.out.println(nombre.charAt(i));
+		}
+	 }
+	 
+	public boolean esPrimo(int numero) {
+		if (numero == 1){
+			System.out.print("el numero es 1 o 0");
+			return true;
+		}
+		for (int i = 2; i < numero; i++) {
+			if (numero % i == 0) {
+				System.out.print("El numero no es primo");
+				return false;
+			}
+		}
+		System.out.print("el numero es primo");
+		return true;
+	}
+	
+	public void ordenarArray (int[] array) {
+		int x;
+		for (int i = 0; i < array.length; i++) {
+			for (int j = i + 1; j < array.length; j++) {
+				if (array[i] > array[j]) {
+					x = array[i];
+					array[i] = array[j];
+					array[j] = x;
+				}
+			}
+		}
+	}
+	
+	public void ordenarCadena (String [] cadena) {
+		String x;
+		int comparacion;
+		for (int i = 0; i < cadena.length - 1; i++) {
+			for (int j = i + 1; j < cadena.length; j++) {
+				comparacion = cadena[i].compareTo(cadena[j]);
+				if (cadena[i].compareTo(cadena[j]) > 0) {
+					x = cadena[i];
+					cadena[i] = cadena[j];
+					cadena[j] = x;
+				}
+			}
+		}
+	}
 	
 	/*
 	 * 31/10/2018
@@ -474,36 +682,7 @@ public class Ejercicios {
 		return resultado;
 	}
 	
-	public boolean esPrimo(int numero) {
-		if (numero == 1){
-			System.out.print("el numero es 1 o 0");
-			return true;
-		}
-		for (int i = 2; i < numero; i++) {
-			if (numero % i == 0) {
-				System.out.print("El numero no es primo");
-				return false;
-			}
-		}
-		System.out.print("el numero es primo");
-		return true;
-	}
-	
-/*	public void reloj() {
-		for (int i = 0; i < 24; i++) {
-			for (int j = 0; j < 60; j++) {
-				for (int k = 0; k < 60; k++) {
-					try {
-						System.out.println(i + ":" + j + ":" + k);
-						Thread.sleep(1000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						System.out.println("Error");;
-					}
-				}
-			}
-		}
-	}	
+/*		
 */	
 	/*
 	 * NullPointer
@@ -527,90 +706,6 @@ public class Ejercicios {
 			
 		}
 		return resultado;	
-	}
-	
-	//ordenar array
-	
-	public void ordenarArray (int[] array) {
-		int x;
-		for (int i = 0; i < array.length; i++) {
-			for (int j = i + 1; j < array.length; j++) {
-				if (array[i] > array[j]) {
-					x = array[i];
-					array[i] = array[j];
-					array[j] = x;
-				}
-			}
-		}
-	}
-	
-	public int ordenarArrayConContador (int[] array) {
-		int x;
-		int cont = 0;
-		for (int i = 0; i < array.length; i++) {
-			cont++;
-			for (int j = i + 1; j < array.length; j++) {
-				if (array[i] > array[j]) {
-					x = array[i];
-					array[i] = array[j];
-					array[j] = x;
-				}
-			}
-		}
-		return cont;
-	}
-	
-	//ordenar cadena
-	
-	public void ordenarCadena (String [] cadena) {
-		String x;
-		int comparacion;
-		for (int i = 0; i < cadena.length - 1; i++) {
-			for (int j = i + 1; j < cadena.length; j++) {
-				comparacion = cadena[i].compareTo(cadena[j]);
-				if (cadena[i].compareTo(cadena[j]) > 0) {
-					x = cadena[i];
-					cadena[i] = cadena[j];
-					cadena[j] = x;
-				}
-			}
-		}
-	}
-	 
-	public static void pruebasAPI() {
-		//1. Imprime por consola el valor de 2 elevado a 3
-		System.out.print(Math.pow(2.0, 3.0));
-		//2. Imprime por consola un valor aleatorio entre 1 y 100
-		Random r = new Random();
-		int valorAleatorio;
-		for (int i = 0; i < 10; i++) {
-			valorAleatorio = r.nextInt(100);
-			System.out.print(valorAleatorio + ", ");
-		}
-		System.out.println();
-		//3. en la cadena "LAS PALMAS DE GRAN CANARIA" IMPRIME "GRAN"
-		String cadena = "LAS PALMAS DE GRAN CANARIA";
-		cadena = cadena.substring(14, 18);
-		System.out.println(cadena);
-		/*
-		 * otra opcion es:
-		 * System.out.println("LAS PALMAS DE GRAN CANARIA".substring(14, 18))
-		 */		
-	}
-	
-	/*
-	 * Generador de matrices
-	 */
-	
-	public float[][] generarMatriz (int filas, int columnas, int inferior, int superior){
-		Random r = new Random();
-		float[][] resultado = new float[filas][columnas];
-		for (int i = 0; i < resultado.length; i++) {
-			for (int j = 0; j < resultado[i].length; j++) {
-				resultado[i][j] = r.nextInt(superior - inferior) + inferior;
-			}
-		}		
-		return resultado;
 	}
 	
 	/*
@@ -679,7 +774,7 @@ public class Ejercicios {
 	public String invertirCaracteres (String cadena) {
 		String resultado = new String();
 		System.out.println(cadena.length());
-		for (int i = cadena.length() - 1; i > 0; i--) {
+		for (int i = cadena.length() - 1; i >= 0; i--) {
 			//resultado += cadena.charAt(i);
 			resultado = resultado.concat(cadena.substring(i, i + 1));
 		}
@@ -688,16 +783,42 @@ public class Ejercicios {
 	
 	
 	public int[] matrizToArrayOrdenado (int[][] matriz) {
-		/*int columnas = 0;
-		for (int i = 0; i < matriz.length; i++) {
-			columnas += matriz[i].length;
-		}*/
+
 		int[] resultado = new int[0];
 		for (int i = 0; i < matriz.length; i++) {
 			resultado = mezclarListasOrdenadas(resultado, matriz[i]);
 		}
 		return resultado;
 	}
+	/**
+	 * =============================
+	 * 		METODOS PROPIOS
+	 * =============================
+	 */
+	public void reloj() {
+		for (int i = 0; i < 24; i++) {
+			for (int j = 0; j < 60; j++) {
+				for (int k = 0; k < 60; k++) {
+					try {
+						System.out.println(i + ":" + j + ":" + k);
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						System.out.println("Error");;
+					}
+				}
+			}
+		}
+	}
 	
-	//https://es.scribd.com/doc/2096038/Ejemplo-Casos-de-Uso-Video-Club
+	public float[][] generarMatriz (int filas, int columnas, int inferior, int superior){
+		Random r = new Random();
+		float[][] resultado = new float[filas][columnas];
+		for (int i = 0; i < resultado.length; i++) {
+			for (int j = 0; j < resultado[i].length; j++) {
+				resultado[i][j] = r.nextInt(superior - inferior) + inferior;
+			}
+		}		
+		return resultado;
+	}
 }
