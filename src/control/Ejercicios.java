@@ -166,7 +166,7 @@ public class Ejercicios {
 		ejercicio.invertirLista(listaNumeros);
 		
 		int[] l1 = {1, 3, 5, 7};
-		int[] l2 = {0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
+		int[] l2 = {20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30};
 		int[] mezcla = ejercicio.mezclarListasOrdenadas(l1, l2);
 		
 		String cadenaEjemplo = "el ejercicio esta bien hecho";
@@ -179,7 +179,7 @@ public class Ejercicios {
 				{3, 1, 5, 8}//4
 		};
 		
-		ejercicio.ordenaFilasMatriz(matrizIrregularEnteros);
+		int[] arrayDeMatrizOrdenado = ejercicio.matrizToArrayOrdenado(matrizIrregularEnteros);
 		
 		
 		System.out.println("FIN DEL PROGRAMA");
@@ -544,6 +544,22 @@ public class Ejercicios {
 		}
 	}
 	
+	public int ordenarArrayConContador (int[] array) {
+		int x;
+		int cont = 0;
+		for (int i = 0; i < array.length; i++) {
+			cont++;
+			for (int j = i + 1; j < array.length; j++) {
+				if (array[i] > array[j]) {
+					x = array[i];
+					array[i] = array[j];
+					array[j] = x;
+				}
+			}
+		}
+		return cont;
+	}
+	
 	//ordenar cadena
 	
 	public void ordenarCadena (String [] cadena) {
@@ -625,51 +641,38 @@ public class Ejercicios {
 	
 	public int[] mezclarListasOrdenadas (int[] l1, int[] l2) {
 		int[] resultado = new int[l1.length + l2.length];
-		int cont = 0;
-		/*int cont = 0;
-		 for (int i = 0; i < l1.length; i++) {
+		int i = 0;
+		int j = 0;
+		
+		for (int k = 0; k < resultado.length; k++) {
 			try {
-				if (l1[i] <= l2[i]) {
-					resultado[cont] = l1[i];
-					resultado[cont + 1] = l2[i];
+				if (l1[i] <= l2[j]) {
+					resultado[k] = l1[i];
+					i++;
 				} else {
-					resultado[cont] = l2[i];
-					resultado[cont + 1] = l1[i];
+					resultado[k] = l2[j];
+					j++;
 				}
-			} catch (ArrayIndexOutOfBoundsException e) {
-				System.out.println("las listas deben ser del mismo tamaño");
-				return resultado;
-			}
-		}
-*/
-		while (cont < l1.length - 1) {
-			while (cont < l2.length - 1) {
-				for (int k = 0; k < resultado.length; k++) {
+			} catch (IndexOutOfBoundsException e1) {				
+				if (l1.length > l2.length ) {
 					try {
-						if (l1[cont] <= l2[cont]) {
-							resultado[k] = l1[cont];
-							resultado[k + 1] = l2[cont];
-							cont++;
-							k++;
-						} else {
-							resultado[k] = l2[cont];
-							resultado[k + 1] = l1[cont];
-							cont++;
-							k++;
-						}
-					} catch (ArrayIndexOutOfBoundsException e) {
-						if(l1.length > l2.length) {
-							resultado[k] = l1[cont];
-							cont++;
-						} else {
-							resultado[k] = l2[cont];
-							cont++;
-						}
-						continue;
+						resultado[k] = l1[i];
+						i++;
+					} catch (IndexOutOfBoundsException e2) {
+						resultado[k] = l2[j];
+					}
+				} else {
+					try {
+						resultado[k] = l2[j];
+						j++;
+					} catch (IndexOutOfBoundsException e3) {
+						resultado[k] = l1[i];
 					}
 				}
+				
 			}
 		}
+
 		return resultado;
 	}
 	
@@ -683,13 +686,17 @@ public class Ejercicios {
 		return resultado;
 	}
 	
-	public void ordenaFilasMatriz (int[][] matriz) {
-		for (int i = 0; i < matriz.length; i++) {
-			this.ordenarArray(matriz[i]);
-		}
-	}
+	
 	public int[] matrizToArrayOrdenado (int[][] matriz) {
-		return null;
+		/*int columnas = 0;
+		for (int i = 0; i < matriz.length; i++) {
+			columnas += matriz[i].length;
+		}*/
+		int[] resultado = new int[0];
+		for (int i = 0; i < matriz.length; i++) {
+			resultado = mezclarListasOrdenadas(resultado, matriz[i]);
+		}
+		return resultado;
 	}
 	
 	//https://es.scribd.com/doc/2096038/Ejemplo-Casos-de-Uso-Video-Club
