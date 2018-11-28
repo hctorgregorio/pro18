@@ -4,8 +4,36 @@ import java.util.Random;
 import modelo.Persona;
 
 public class Ejercicios {
-
+	
+	//Ejercicio 1
+	
+	private Persona[] personas;
+	
+	//Ejercicio 2
+	public void hijosPersonas(Persona[] personas) {
+		
+		
+		for (int i = 0; i < personas.length; i++) {
+			System.out.println("Nombre = " + personas[i].getNombre());
+			if(personas[i].getHijosBiologicos() != null) {
+				for (int j = 0; j < personas[i].getHijosBiologicos().length; j++) {
+					if (personas[i].getHijosBiologicos()[j].getSexo() == 'M') {
+						System.out.println("hijo " + j + "= " + personas[i].getHijosBiologicos()[j].getNombre());
+					} else {
+						System.out.println("hija " + j + "= " + personas[i].getHijosBiologicos()[j].getNombre());
+					}
+				}
+			} else {
+				System.out.println("No tiene hijos");
+			}
+		}
+	}
+	
+	
 	public static void main(String[] args) {
+		//private Persona[] personas;
+		
+		
 		/**
 		 * ================================================
 		 * Declaracion e incializacion de un objeto Persona
@@ -348,6 +376,43 @@ public class Ejercicios {
 			ejercicio.ordenarArray(matrizIrregularEnteros[i]);
 		}
 		int[] arrayDeMatrizOrdenado = ejercicio.matrizToArrayOrdenado(matrizIrregularEnteros);
+		
+		/*
+		 * Declara en la clase Ejercicios un array de Personas
+		 * 
+		 * En la clase Personas delcara un array de Personas que representan los hijos biologicos que tiene.
+		 * 
+		 * Hacer un commit local al conseguir cada objetivo 1,2
+		 * 
+		 */
+		
+		/**
+		 * =================================
+		 * **********PERSONAS***************
+		 * =================================
+		 */
+		
+		Persona juan = new Persona("1", "juan", 20, 'M');
+		Persona pepe = new Persona("2", "pepe", 20, 'M');
+		Persona lola = new Persona("3", "lola", 20, 'F');
+		Persona paca = new Persona("4", "paca", 20, 'F');
+		Persona juana = new Persona("5", "juana", 20, 'F');
+		Persona jaime = new Persona("6", "jaime", 20, 'M');
+		Persona bartola = new Persona("7", "bartola", 20, 'F');
+		Persona manolo = new Persona("8", "manolo", 20, 'M');
+		
+		Persona[] personas = {juan, pepe, lola, paca, juana, jaime, bartola, manolo};
+		
+		Persona[] hijos1 = {pepe, lola};
+		juan.setHijosBiologicos(hijos1);
+		Persona[] hijos2 = {juana};
+		lola.setHijosBiologicos(hijos2);
+		Persona[] hijos3 = {jaime, bartola, manolo};
+		juana.setHijosBiologicos(hijos3);
+		
+		ejercicio.hijosPersonas(personas);
+		
+		
 		
 		
 		System.out.println("FIN DEL PROGRAMA");
@@ -781,7 +846,6 @@ public class Ejercicios {
 		return resultado;
 	}
 	
-	
 	public int[] matrizToArrayOrdenado (int[][] matriz) {
 
 		int[] resultado = new int[0];
@@ -790,6 +854,7 @@ public class Ejercicios {
 		}
 		return resultado;
 	}
+	
 	/**
 	 * =============================
 	 * 		METODOS PROPIOS

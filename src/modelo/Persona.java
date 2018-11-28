@@ -11,14 +11,17 @@ public class Persona {
 	private String nombre;
 	private LocalDate fecha_nac;
 	private int longPaso;
-	
-//CONSTRUCTOR
-	public Persona(String nif, String nombre, int longPaso) {
+	private char sexo;  // 'M' 'F'
+	private Persona[] hijosBiologicos;
+
+	//CONSTRUCTOR
+	public Persona(String nif, String nombre, int longPaso, char sexo) {
 		super();
 		this.nif = nif;
 		this.nombre = nombre;
 		this.longPaso = longPaso;
-		this.fecha_nac = null;
+		this.fecha_nac = LocalDate.now();
+		this.sexo = sexo;
 	}
 
 //CONSTRUCTOR VACIO
@@ -79,7 +82,23 @@ public class Persona {
 	}
 
 
-//METODO CONTAR PASOS
+public char getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(char sexo) {
+		this.sexo = sexo;
+	}
+
+public Persona[] getHijosBiologicos() {
+		return hijosBiologicos;
+	}
+
+	public void setHijosBiologicos(Persona[] hijosBiologicos) {
+		this.hijosBiologicos = hijosBiologicos;
+	}
+
+	//METODO CONTAR PASOS
 	public int caminar(int numPasos){
 		
 		/*Random r = new Random();
