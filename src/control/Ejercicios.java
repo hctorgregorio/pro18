@@ -23,8 +23,10 @@ public class Ejercicios {
 						System.out.println("hija " + j + "= " + personas[i].getHijosBiologicos()[j].getNombre());
 					}
 				}
+				System.out.println("======================");
 			} else {
 				System.out.println("No tiene hijos");
+				System.out.println("======================");
 			}
 		}
 	}
@@ -400,6 +402,9 @@ public class Ejercicios {
 		Persona jaime = new Persona("6", "jaime", 20, 'M');
 		Persona bartola = new Persona("7", "bartola", 20, 'F');
 		Persona manolo = new Persona("8", "manolo", 20, 'M');
+		Persona padre1 = new Persona("9", "padre1", 20, 'M');
+		Persona madre1 = new Persona("10", "madre1", 20, 'M');
+		Persona madre2 = new Persona("11", "madre2", 20, 'F');
 		
 		Persona[] personas = {juan, pepe, lola, paca, juana, jaime, bartola, manolo};
 		
@@ -411,6 +416,16 @@ public class Ejercicios {
 		juana.setHijosBiologicos(hijos3);
 		
 		ejercicio.hijosPersonas(personas);
+		
+		manolo.setPadre(padre1);
+		manolo.setMadre(madre1);
+		manolo.setMadre(madre2);
+		
+		System.out.println("El padre de " + manolo.getNombre() + " es " + manolo.getPadre().getNombre());
+		System.out.println("La madre de " + manolo.getNombre() + " es " + manolo.getMadre().getNombre());
+		
+		
+		
 		
 		
 		

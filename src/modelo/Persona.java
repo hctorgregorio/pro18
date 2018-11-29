@@ -13,6 +13,9 @@ public class Persona {
 	private int longPaso;
 	private char sexo;  // 'M' 'F'
 	private Persona[] hijosBiologicos;
+	private Persona padre;
+	private Persona madre;
+	//padre y madre
 
 	//CONSTRUCTOR
 	public Persona(String nif, String nombre, int longPaso, char sexo) {
@@ -96,6 +99,30 @@ public Persona[] getHijosBiologicos() {
 
 	public void setHijosBiologicos(Persona[] hijosBiologicos) {
 		this.hijosBiologicos = hijosBiologicos;
+	}
+
+	public Persona getPadre() {
+		return padre;
+	}
+
+	public void setPadre(Persona padre) {
+		if (padre.getSexo() == 'M') {
+			this.padre = padre;
+		} else {
+			System.out.println("Debe introducir un hombre");
+		}
+	}
+
+	public Persona getMadre() {
+		return madre;
+	}
+
+	public void setMadre(Persona madre) {
+		if (madre.getSexo() == 'F') {
+			this.madre = madre;
+		} else {
+			System.out.println("Debe introducir una mujer");
+		}
 	}
 
 	//METODO CONTAR PASOS
