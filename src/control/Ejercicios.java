@@ -424,8 +424,18 @@ public class Ejercicios {
 		System.out.println("El padre de " + manolo.getNombre() + " es " + manolo.getPadre().getNombre());
 		System.out.println("La madre de " + manolo.getNombre() + " es " + manolo.getMadre().getNombre());
 		
+		/**
+		 * ======================
+		 * mezclaCadenaOrdenada
+		 * ======================
+		 */
 		
-		
+		String[][] cadenaMatrizOrdenada = {
+				{"a", "c", "e", "g", "i"},
+				{"b", "d", "f"},
+				{"h", "j"}
+		};
+		String[] cadenaArrayOrdenado = ejercicio.matrizToArrayOrdenado(cadenaMatrizOrdenada); 		
 		
 		
 		
@@ -686,10 +696,8 @@ public class Ejercicios {
 	
 	public void ordenarCadena (String [] cadena) {
 		String x;
-		int comparacion;
 		for (int i = 0; i < cadena.length - 1; i++) {
 			for (int j = i + 1; j < cadena.length; j++) {
-				comparacion = cadena[i].compareTo(cadena[j]);
 				if (cadena[i].compareTo(cadena[j]) > 0) {
 					x = cadena[i];
 					cadena[i] = cadena[j];
@@ -901,4 +909,72 @@ public class Ejercicios {
 		}		
 		return resultado;
 	}
+	
+	public String[] mezclaCadenasOrdenadas(String[] cadena1, String[] cadena2) {
+		String[] resultado;
+		if (cadena1.length == 1) {
+			resultado = new String[cadena1.length + cadena2.length - 1];
+		} else {
+			resultado = new String[cadena1.length + cadena2.length];
+		}
+		int i = 0;
+		int j = 0;
+		
+		for (int k = 0; k < resultado.length; k++) {
+			try {
+				if (cadena1[i].compareTo(cadena2[j]) <= 0) {
+					resultado[k] = cadena1[i];
+					i++;
+				} else {
+					resultado[k] = cadena2[j];
+					j++;
+				}
+			} catch (NullPointerException e1) {				
+				if (cadena1.length > cadena2.length ) {
+					try {
+						resultado[k] = cadena1[i];
+						i++;
+					} catch (NullPointerException e2) {
+						resultado[k] = cadena2[j];
+					}
+				} else {
+					try {
+						resultado[k] = cadena2[j];
+						j++;
+					} catch (NullPointerException e3) {
+						resultado[k] = cadena1[i];
+					}
+				}
+				
+			} catch (IndexOutOfBoundsException e1) {				
+				if (cadena1.length > cadena2.length ) {
+					try {
+						resultado[k] = cadena1[i];
+						i++;
+					} catch (IndexOutOfBoundsException e2) {
+						resultado[k] = cadena2[j];
+					}
+				} else {
+					try {
+						resultado[k] = cadena2[j];
+						j++;
+					} catch (IndexOutOfBoundsException e3) {
+						resultado[k] = cadena1[i];
+					}
+				}
+				
+			}
+		}
+
+		return resultado;
+	}
+	
+	public String[] matrizToArrayOrdenado(String[][] cadenaOrdenada) {
+		String[] resultado = new String[1];
+		for (int i = 0; i < cadenaOrdenada.length; i++) {
+			resultado = mezclaCadenasOrdenadas(resultado, cadenaOrdenada[i]);
+		}
+		return resultado;
+	}
+	
 }
